@@ -22,7 +22,7 @@ const Navbar = () => {
       <nav className="flex justify-between items-center px-6 md:px-20 py-6 shadow-md bg-white">
         {/* Logo */}
         <div className="text-3xl font-bold flex items-center text-black">
-          <Link to="/home" className="hover:text-pink-600">
+          <Link to="/" className="hover:text-pink-600">
             <span className="text-pink-600">Odour</span>
           </Link>
         </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
         </ul> */}
         <ul className="hidden md:flex gap-8 text-md font-medium">
-  {["Home", "About us", "Shop",  "Contact"].map((label, index) => (
+  {[ "About us", "Shop",  "Contact"].map((label, index) => (
     <li key={index}>
       <NavLink
         to={`/${label.toLowerCase().replace(" ", "")}`}
