@@ -49,17 +49,21 @@ const Navbar = () => {
           ))}
         </ul> */}
         <ul className="hidden md:flex gap-8 text-md font-medium">
-  {[ "About us", "Shop",  "Contact"].map((label, index) => (
+  {["Home", "About us", "Shop", "Contact"].map((label, index) => {
+  const route = label === "Home" ? "/" : `/${label.toLowerCase().replace(/\s+/g, "")}`;
+  return (
     <li key={index}>
       <NavLink
-        to={`/${label.toLowerCase().replace(" ", "")}`}
+        to={route}
         className="hover:text-pink-600"
         activeClassName="text-pink-600 font-bold"
       >
         {label}
       </NavLink>
     </li>
-  ))}
+  );
+})}
+
 </ul>
 
         {/* Icons (Desktop Only) */}
