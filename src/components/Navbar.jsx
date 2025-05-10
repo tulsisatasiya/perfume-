@@ -82,19 +82,23 @@ const Navbar = () => {
       {/* Mobile Navigation Links */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white px-6 py-4 shadow-md">
-          <ul className="flex flex-col gap-4 text-md font-medium">
-            {["Home", "Shop", "Product", "Blog", "About us", "Contact"].map((label, index) => (
-              <li key={index}>
-                <Link
-                  to={`/${label.toLowerCase().replace(" ", "")}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-pink-600"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+       <ul className="flex flex-col gap-4 text-md font-medium">
+  {["Home", "About us", "Shop", "Contact"].map((label, index) => {
+    const route = label === "Home" ? "/" : `/${label.toLowerCase().replace(/\s+/g, "")}`;
+    return (
+      <li key={index}>
+        <Link
+          to={route}
+          onClick={() => setMobileMenuOpen(false)}
+          className="hover:text-pink-600"
+        >
+          {label}
+        </Link>
+      </li>
+    );
+  })}
+</ul>
+
 
           {/* Mobile Icons */}
           <div className="flex justify-around mt-4">
