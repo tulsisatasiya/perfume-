@@ -5,6 +5,7 @@ import { FaSearch, FaHeart, FaSync, FaShoppingBag } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import About from './About';
 
 
 
@@ -207,6 +208,9 @@ const Home = () => {
         </SwiperSlide>
       </Swiper>
 
+{/* about */}
+      
+<About/>
 
       {/*3-Image Section Using Map */}
       <div className="flex flex-wrap justify-center items-center gap-4 px-4 py-24 bg-white">

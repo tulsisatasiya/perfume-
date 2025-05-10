@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaSearch, FaShoppingBag, FaCog, FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
       <nav className="flex justify-between items-center px-6 md:px-20 py-6 shadow-md bg-white">
         {/* Logo */}
         <div className="text-3xl font-bold flex items-center text-black">
-          <Link to="/" className="hover:text-pink-600">
+          <Link to="/home" className="hover:text-pink-600">
             <span className="text-pink-600">Odour</span>
           </Link>
         </div>
@@ -35,8 +36,8 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links (Desktop) */}
-        <ul className="hidden md:flex gap-8 text-md font-medium">
-          {["Home", "Shop", "Product", "Blog", "About us", "Contact"].map((label, index) => (
+        {/* <ul className="hidden md:flex gap-8 text-md font-medium">
+          {["Home","About us", "Shop", "Product", "Contact"].map((label, index) => (
             <li key={index}>
               <Link
                 to={`/${label.toLowerCase().replace(" ", "")}`}
@@ -46,7 +47,20 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <ul className="hidden md:flex gap-8 text-md font-medium">
+  {["Home", "About us", "Shop",  "Contact"].map((label, index) => (
+    <li key={index}>
+      <NavLink
+        to={`/${label.toLowerCase().replace(" ", "")}`}
+        className="hover:text-pink-600"
+        activeClassName="text-pink-600 font-bold"
+      >
+        {label}
+      </NavLink>
+    </li>
+  ))}
+</ul>
 
         {/* Icons (Desktop Only) */}
         <div className="hidden md:flex items-center gap-6">
